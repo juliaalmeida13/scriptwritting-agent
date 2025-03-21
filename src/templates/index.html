@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Roteiros - League of Legends</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gerador de Roteiros para Vídeos de League of Legends</h1>
+            <p>Gere automaticamente roteiros com base nas notas do patch mais recente</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <div class="card-content">
+                    <h2>Gerar Roteiro</h2>
+                    <p>Clique no botão abaixo para gerar um roteiro baseado nas notas do patch mais recente de League of Legends.</p>
+                    <p>O roteiro será focado em:</p>
+                    <ul>
+                        <li>Principais mudanças do patch</li>
+                        <li>Campeões que foram nerfados</li>
+                        <li>Campeões que foram buffados</li>
+                        <li>Outras alterações importantes</li>
+                    </ul>
+
+                    <div class="button-container">
+                        <button id="gerarRoteiro" class="btn">Gerar Roteiro</button>
+                    </div>
+
+                    <div id="loading" class="loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Gerando roteiro, por favor aguarde...</p>
+                        <p class="small">Este processo pode levar até 1 minuto</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultado" class="card resultado" style="display: none;">
+                <div class="card-content">
+                    <h2>Roteiro Gerado</h2>
+                    <div id="roteiroContent" class="roteiro-content"></div>
+                    <div class="button-container">
+                        <button id="copiarRoteiro" class="btn btn-outline">Copiar Roteiro</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 Gerador de Roteiros para Vídeos de League of Legends - <a href="https://github.com/seu-usuario/lol-script-generator" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
